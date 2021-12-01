@@ -21,7 +21,7 @@ std::vector<std::string> split(std::string target, std::string delim) {
 }
 
 std::string read_inputs() {
-    std::ifstream file("src/01/values.txt");
+    std::ifstream file("values.txt");
     if (file.is_open()) {
         std::string line;
         std::string values;
