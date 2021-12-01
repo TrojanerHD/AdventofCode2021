@@ -2,8 +2,7 @@
 
 My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021) challenge
 
-[![Language](https://img.shields.io/badge/Language-Pending-gray)](https://github.com/TrojanerHD/AdventofCode2021)
-[![Environment](https://img.shields.io/badge/Environment-Pending-gray)](https://github.com/TrojanerHD/AdventofCode2021)
+[![Language](https://img.shields.io/badge/Language-C++-blue)](https://github.com/TrojanerHD/AdventofCode2021)
 [![Days completed](https://img.shields.io/badge/Days%20completed-0-red)](https://github.com/TrojanerHD/AdventofCode2021)
 
 ## Check out solutions from others
