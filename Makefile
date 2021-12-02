@@ -3,10 +3,15 @@ CC = g++
 all:
 	make compile
 	make 01
+	make 02
 
 01: 
 	cd src/01; \
 	./a.out
+
+02:
+	cd src/02; \
+		./a.out
 
 clean:
 	for i in main; do find ./src -name "a.out" -delete; done
