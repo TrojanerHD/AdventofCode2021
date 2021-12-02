@@ -14,7 +14,9 @@ all:
 		./a.out
 
 clean:
-	for i in main; do find ./src -name "a.out" -delete; done
+	for i in main; do find ./src -type f -name "a.out" -delete; done
 
 compile:
-	for i in dir; do find ./src -name "*.cpp" -execdir $(CC) "{}" \;; done
+	cd src/common && $(CC) -c -o common.o common.cpp
+	for i in dir; do find ./src -type f -name "*.cpp" -not -name "common.cpp" -execdir $(CC) -c -o output.o "{}" \; -execdir $(CC) output.o ../common/common.o -lm \;; done
+	for i in main; do find ./src -type f \( -name "output.o" -o -name "common.o" \) -delete; done
