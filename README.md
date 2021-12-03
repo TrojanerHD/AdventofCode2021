@@ -78,11 +78,11 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2021%20-%20LUA">AdventOfCode/2021 - LUA</a></td>
     </tr>
     <tr>
-      <td>joblo2213</td>
+      <td>J0B10</td>
       <td></td>
-      <td><a href="https://github.com/joblo2213/AdventOfCode2019">AdventOfCode2019</a></td>
-      <td><a href="https://github.com/joblo2213/AdventOfCode2020">AdventOfCode2020</a></td>
-      <td></td>
+      <td><a href="https://github.com/J0B10/AdventOfCode2019">AdventOfCode2019</a></td>
+      <td><a href="https://github.com/J0B10/AdventOfCode2020">AdventOfCode2020</a></td>
+      <td><a href="https://github.com/J0B10/AdventOfCode2021">AdventOfCode2021</a></td>
     </tr>
     <tr>
       <td>Gewi413</td>
