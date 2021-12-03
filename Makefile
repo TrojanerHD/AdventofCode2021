@@ -13,6 +13,10 @@ all:
 	cd src/02; \
 		./a.out
 
+03:
+	cd src/03; \
+		./a.out
+
 clean:
 	for i in main; do find ./src -type f -name "a.out" -delete; done
 
