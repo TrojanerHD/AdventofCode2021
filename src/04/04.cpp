@@ -6,6 +6,8 @@
 
 #include "../common/common.h"
 
+typedef std::vector<std::vector<int>> bingoBoard;
+
 // Stolen from https://stackoverflow.com/a/20659156/9634099
 std::vector<int> stringToIntVector(std::string input) {
     std::stringstream iss(input);
@@ -16,12 +18,10 @@ std::vector<int> stringToIntVector(std::string input) {
     return result;
 }
 
-void addBoard(
-    std::vector<int>& bingoBoards,
-    std::vector<std::vector<std::vector<int>>>& bingos,
-    std::vector<std::vector<int>> foundBoard,
-    std::vector<std::vector<std::vector<int>>>::iterator& bingoBoardIterator,
-    std::vector<int> enteredNumbers) {
+void addBoard(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
+              bingoBoard foundBoard,
+              std::vector<bingoBoard>::iterator& bingoBoardIterator,
+              std::vector<int> enteredNumbers) {
     int sum = 0;
     for (std::vector<int> row : foundBoard)
         for (int number : row)
@@ -33,7 +33,7 @@ void addBoard(
     --bingoBoardIterator;
 }
 
-std::vector<int> findBoard(std::vector<std::vector<std::vector<int>>> bingos,
+std::vector<int> findBoard(std::vector<bingoBoard> bingos,
                            std::vector<std::string> inputs,
                            std::vector<int>& enteredNumbers) {
     std::vector<int> bingoBoards = {};
@@ -42,7 +42,7 @@ std::vector<int> findBoard(std::vector<std::vector<std::vector<int>>> bingos,
         for (std::vector<std::vector<std::vector<int>>>::iterator
                  bingoBoardIterator = bingos.begin();
              bingoBoardIterator != bingos.end(); ++bingoBoardIterator) {
-            std::vector<std::vector<int>> bingoBoard = *bingoBoardIterator;
+            bingoBoard bingoBoard = *bingoBoardIterator;
             bool bingo = true;
             for (std::vector<int> row : bingoBoard) {
                 bingo = true;
@@ -82,7 +82,7 @@ std::vector<int> findBoard(std::vector<std::vector<std::vector<int>>> bingos,
 
 int main() {
     const std::vector<std::string> values = split(read_inputs(), "\n");
-    std::vector<std::vector<std::vector<int>>> bingos = {{}};
+    std::vector<bingoBoard> bingos = {{}};
     const std::vector<std::string> inputs = split(values[0], ",");
     int bingoBoard = 0;
     for (std::vector<std::string>::const_iterator iterator = values.begin() + 2;
