@@ -10,7 +10,7 @@
         "${workspaceFolder}/src/common/common.cpp",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "${fileDirname}/a.out"
       ],
       "options": {
         "cwd": "${fileDirname}"
