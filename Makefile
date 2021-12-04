@@ -4,6 +4,8 @@ all:
 	make compile
 	make 01
 	make 02
+	make 03
+	make 04
 
 01: 
 	cd src/01; \
@@ -15,6 +17,10 @@ all:
 
 03:
 	cd src/03; \
+		./a.out
+
+04:
+	cd src/04; \
 		./a.out
 
 clean:

@@ -1,0 +1,102 @@
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+#include "../common/common.h"
+
+// Stolen from https://stackoverflow.com/a/20659156/9634099
+std::vector<int> stringToIntVector(std::string input) {
+    std::stringstream iss(input);
+
+    int number;
+    std::vector<int> result;
+    while (iss >> number) result.push_back(number);
+    return result;
+}
+
+void addBoard(
+    std::vector<int>& bingoBoards,
+    std::vector<std::vector<std::vector<int>>>& bingos,
+    std::vector<std::vector<int>> foundBoard,
+    std::vector<std::vector<std::vector<int>>>::iterator& bingoBoardIterator,
+    std::vector<int> enteredNumbers) {
+    int sum = 0;
+    for (std::vector<int> row : foundBoard)
+        for (int number : row)
+            if (std::find(enteredNumbers.begin(), enteredNumbers.end(),
+                          number) == enteredNumbers.end())
+                sum += number;
+    bingoBoards.push_back(sum * *enteredNumbers.rbegin());
+    bingos.erase(bingoBoardIterator);
+    --bingoBoardIterator;
+}
+
+std::vector<int> findBoard(std::vector<std::vector<std::vector<int>>> bingos,
+                           std::vector<std::string> inputs,
+                           std::vector<int>& enteredNumbers) {
+    std::vector<int> bingoBoards = {};
+    for (std::string input : inputs) {
+        enteredNumbers.push_back(stoi(input));
+        for (std::vector<std::vector<std::vector<int>>>::iterator
+                 bingoBoardIterator = bingos.begin();
+             bingoBoardIterator != bingos.end(); ++bingoBoardIterator) {
+            std::vector<std::vector<int>> bingoBoard = *bingoBoardIterator;
+            bool bingo = true;
+            for (std::vector<int> row : bingoBoard) {
+                bingo = true;
+                for (int number : row)
+                    if (std::find(enteredNumbers.begin(), enteredNumbers.end(),
+                                  number) == enteredNumbers.end()) {
+                        bingo = false;
+                        break;
+                    }
+                if (bingo) {
+                    addBoard(bingoBoards, bingos, bingoBoard,
+                             bingoBoardIterator, enteredNumbers);
+                    break;
+                }
+            }
+            if (bingo) continue;
+
+            for (size_t i = 0; i < bingoBoard[0].size(); ++i) {
+                bingo = true;
+                for (std::vector<int> row : bingoBoard) {
+                    if (std::find(enteredNumbers.begin(), enteredNumbers.end(),
+                                  row[i]) == enteredNumbers.end()) {
+                        bingo = false;
+                        break;
+                    }
+                }
+                if (bingo) {
+                    addBoard(bingoBoards, bingos, bingoBoard,
+                             bingoBoardIterator, enteredNumbers);
+                    break;
+                }
+            }
+        }
+    }
+    return bingoBoards;
+}
+
+int main() {
+    const std::vector<std::string> values = split(read_inputs(), "\n");
+    std::vector<std::vector<std::vector<int>>> bingos = {{}};
+    const std::vector<std::string> inputs = split(values[0], ",");
+    int bingoBoard = 0;
+    for (std::vector<std::string>::const_iterator iterator = values.begin() + 2;
+         iterator != values.end(); ++iterator) {
+        if (*iterator == "") {
+            ++bingoBoard;
+            bingos.push_back({});
+            continue;
+        }
+        bingos[bingoBoard].push_back(stringToIntVector(*iterator));
+    }
+    std::vector<int> enteredNumbers;
+    std::vector<int> foundBoards = findBoard(bingos, inputs, enteredNumbers);
+
+    std::cout << "Part 1: " << foundBoards[0]
+              << "\nPart 2: " << *foundBoards.rbegin() << std::endl;
+}
