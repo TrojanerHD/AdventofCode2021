@@ -39,8 +39,8 @@ std::vector<int> findBoard(std::vector<bingoBoard> bingos,
     std::vector<int> bingoBoards = {};
     for (std::string input : inputs) {
         enteredNumbers.push_back(stoi(input));
-        for (std::vector<std::vector<std::vector<int>>>::iterator
-                 bingoBoardIterator = bingos.begin();
+        for (std::vector<bingoBoard>::iterator bingoBoardIterator =
+                 bingos.begin();
              bingoBoardIterator != bingos.end(); ++bingoBoardIterator) {
             bingoBoard bingoBoard = *bingoBoardIterator;
             bool bingo = true;
