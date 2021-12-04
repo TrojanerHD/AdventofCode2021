@@ -84,15 +84,14 @@ int main() {
     const std::vector<std::string> values = split(read_inputs(), "\n");
     std::vector<bingoBoard> bingos = {{}};
     const std::vector<std::string> inputs = split(values[0], ",");
-    int bingoBoard = 0;
+
     for (std::vector<std::string>::const_iterator iterator = values.begin() + 2;
          iterator != values.end(); ++iterator) {
         if (*iterator == "") {
-            ++bingoBoard;
             bingos.push_back({});
             continue;
         }
-        bingos[bingoBoard].push_back(stringToIntVector(*iterator));
+        bingos[bingos.size() - 1].push_back(stringToIntVector(*iterator));
     }
     std::vector<int> enteredNumbers;
     std::vector<int> foundBoards = findBoard(bingos, inputs, enteredNumbers);
