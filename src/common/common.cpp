@@ -9,7 +9,10 @@
 // Stolen from https://stackoverflow.com/a/40699396/9634099
 std::string read_inputs() {
     std::ifstream file("values.txt");
-    if (!file.is_open()) return nullptr;
+    if (!file.good()) {
+        std::cout << "Values file not found" << std::endl;
+        return "";
+    }
     std::string line;
     std::string values;
     auto firstIteration = true;
