@@ -7,6 +7,7 @@ all:
 	make 03
 	make 04
 	make 05
+	make 06
 
 01: 
 	cd src/01; \
@@ -26,6 +27,10 @@ all:
 
 05:
 	cd src/05; \
+		./a.out
+
+06:
+	cd src/06; \
 		./a.out
 
 clean:
