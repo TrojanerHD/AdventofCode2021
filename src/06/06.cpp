@@ -6,29 +6,6 @@
 
 #include "../common/common.h"
 
-void substract(std::vector<int>& inputs, int j, int subtract) {
-    inputs[j] -= subtract;
-    if (inputs[j] <= 0) {
-        inputs.push_back(9 + inputs[j] + subtract);
-        inputs[j] += subtract;
-    }
-}
-
-void addToMap(std::map<int, int>& map, int insert) {
-    while (insert > 8) insert -= 8;
-    std::map<int, int>::iterator itr = map.find(insert);
-    if (itr == map.end())
-        map.insert(std::pair<int, int>(insert, 1));
-    else
-        itr->second++;
-}
-
-std::map<int, int> fillMap(std::vector<int> vector) {
-    std::map<int, int> map;
-    for (int i : vector) addToMap(map, i);
-    return map;
-}
-
 int main() {
     const std::vector<std::string> stringInputs = split(read_inputs(), ",");
     std::vector<int> startValues;
@@ -37,7 +14,6 @@ int main() {
                    std::back_inserter(startValues),
                    [](const std::string& str) { return stoi(str); });
 
-    std::map<int, int> numbers = fillMap(startValues);
     std::vector<long> inputs{0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (int i : startValues) inputs[i]++;
 
