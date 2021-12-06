@@ -18,7 +18,7 @@ std::vector<int> stringToIntVector(std::string input) {
     return result;
 }
 
-void addBoard(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
+void add_board(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
               bingoBoard foundBoard,
               std::vector<bingoBoard>::iterator& bingoBoardIterator,
               std::vector<int> enteredNumbers) {
@@ -53,7 +53,7 @@ std::vector<int> findBoard(std::vector<bingoBoard> bingos,
                         break;
                     }
                 if (bingo) {
-                    addBoard(bingoBoards, bingos, bingoBoard,
+                    add_board(bingoBoards, bingos, bingoBoard,
                              bingoBoardIterator, enteredNumbers);
                     break;
                 }
@@ -70,7 +70,7 @@ std::vector<int> findBoard(std::vector<bingoBoard> bingos,
                     }
                 }
                 if (bingo) {
-                    addBoard(bingoBoards, bingos, bingoBoard,
+                    add_board(bingoBoards, bingos, bingoBoard,
                              bingoBoardIterator, enteredNumbers);
                     break;
                 }
