@@ -7,7 +7,7 @@
 
 // Stolen from
 // https://www.programiz.com/cpp-programming/examples/binary-decimal-convert
-int binaryToDecimal(std::string binary) {
+int binary_to_decimal(std::string binary) {
     int dec = 0, i = 0, rem;
 
     while (binary.length() != 0) {
@@ -20,7 +20,7 @@ int binaryToDecimal(std::string binary) {
     return dec;
 }
 
-int numberOfZeros(std::vector<std::string>& inputs, size_t i) {
+int number_of_zeros(std::vector<std::string>& inputs, size_t i) {
     int zeros = 0;
     for (std::vector<std::string>::iterator iterator = inputs.begin();
          iterator != inputs.end(); ++iterator) {
@@ -30,9 +30,9 @@ int numberOfZeros(std::vector<std::string>& inputs, size_t i) {
     return zeros;
 }
 
-void applyBitCriteria(std::vector<std::string>& inputs, bool reversed,
+void apply_bit_criteria(std::vector<std::string>& inputs, bool reversed,
                       size_t i) {
-    int zeros = numberOfZeros(inputs, i);
+    int zeros = number_of_zeros(inputs, i);
     bool moreZeros = zeros > inputs.size() / 2;
     for (std::vector<std::string>::iterator iterator = inputs.begin();
          iterator != inputs.end(); ++iterator) {
@@ -58,15 +58,15 @@ int main() {
     std::string gamma = "";
     std::string epsilon = "";
     for (size_t i = 0; i < inputs[0].length(); i++) {
-        int zeros = numberOfZeros(inputs, i);
+        int zeros = number_of_zeros(inputs, i);
         gamma += zeros > inputs.size() / 2 ? "0" : "1";
         epsilon += zeros > inputs.size() / 2 ? "1" : "0";
-        if (oxygenInputs.size() > 1) applyBitCriteria(oxygenInputs, false, i);
-        if (co2Inputs.size() > 1) applyBitCriteria(co2Inputs, true, i);
+        if (oxygenInputs.size() > 1) apply_bit_criteria(oxygenInputs, false, i);
+        if (co2Inputs.size() > 1) apply_bit_criteria(co2Inputs, true, i);
     }
-    std::cout << "Part 1: " << binaryToDecimal(gamma) * binaryToDecimal(epsilon)
+    std::cout << "Part 1: " << binary_to_decimal(gamma) * binary_to_decimal(epsilon)
               << "\nPart 2: "
-              << binaryToDecimal(oxygenInputs[0]) *
-                     binaryToDecimal(co2Inputs[0])
+              << binary_to_decimal(oxygenInputs[0]) *
+                     binary_to_decimal(co2Inputs[0])
               << std::endl;
 }
