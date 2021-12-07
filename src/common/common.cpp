@@ -47,4 +47,5 @@ std::vector<int> string_vector_to_int_vector(std::vector<std::string> input) {
     std::transform(input.begin(), input.end(),
                    std::back_inserter(output),
                    [](const std::string& str) { return stoi(str); });
+    return output;
 }
