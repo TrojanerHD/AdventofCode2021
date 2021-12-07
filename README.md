@@ -105,6 +105,13 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2020">aoc/2020</a></td>
       <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2021">aoc/2021</a></td>
     </tr>
+    <tr>
+      <td>Seralius</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><a href="https://github.com/Seralius/AOC2021">AOC2021</a></td>
+    </tr>
   </tbody>
 </table>
 
