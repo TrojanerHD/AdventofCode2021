@@ -41,3 +41,10 @@ std::vector<std::string> split(std::string target, std::string delim) {
     }
     return v;
 }
+// Stolen from https://stackoverflow.com/a/15619863/9634099
+std::vector<int> string_vector_to_int_vector(std::vector<std::string> input) {
+    std::vector<int> output;
+    std::transform(input.begin(), input.end(),
+                   std::back_inserter(output),
+                   [](const std::string& str) { return stoi(str); });
+}

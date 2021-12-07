@@ -8,11 +8,7 @@
 
 int main() {
     const std::vector<std::string> stringInputs = split(read_inputs(), ",");
-    std::vector<int> startValues;
-    // Stolen from https://stackoverflow.com/a/15619863/9634099
-    std::transform(stringInputs.begin(), stringInputs.end(),
-                   std::back_inserter(startValues),
-                   [](const std::string& str) { return stoi(str); });
+    std::vector<int> startValues = string_vector_to_int_vector(stringInputs);
 
     std::vector<long> inputs{0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (int i : startValues) inputs[i]++;
