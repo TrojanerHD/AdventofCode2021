@@ -29,7 +29,6 @@ std::string read_inputs() {
 // Stolen from https://stackoverflow.com/a/40699396/9634099
 std::vector<std::string> split(std::string target, std::string delim) {
     std::regex rx("(.*?)" + delim);
-    target += delim;
     std::vector<std::string> v;
     if (!target.empty()) {
         std::smatch res;
@@ -38,6 +37,9 @@ std::vector<std::string> split(std::string target, std::string delim) {
             v.push_back(res[1]);
             searchStart = res.suffix().first;
         }
+        std::string end = "";
+        for (; searchStart != target.cend(); ++searchStart) end += *searchStart;
+        v.push_back(end);
     }
     return v;
 }
