@@ -9,7 +9,7 @@
 typedef std::vector<std::vector<int>> bingoBoard;
 
 // Stolen from https://stackoverflow.com/a/20659156/9634099
-std::vector<int> stringToIntVector(std::string input) {
+std::vector<int> string_to_int_vector(std::string input) {
     std::stringstream iss(input);
 
     int number;
@@ -33,7 +33,7 @@ void add_board(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
     --bingoBoardIterator;
 }
 
-std::vector<int> findBoard(std::vector<bingoBoard> bingos,
+std::vector<int> find_board(std::vector<bingoBoard> bingos,
                            std::vector<std::string> inputs,
                            std::vector<int>& enteredNumbers) {
     std::vector<int> bingoBoards = {};
@@ -91,10 +91,10 @@ int main() {
             bingos.push_back({});
             continue;
         }
-        bingos[bingos.size() - 1].push_back(stringToIntVector(*iterator));
+        bingos[bingos.size() - 1].push_back(string_to_int_vector(*iterator));
     }
     std::vector<int> enteredNumbers;
-    std::vector<int> foundBoards = findBoard(bingos, inputs, enteredNumbers);
+    std::vector<int> foundBoards = find_board(bingos, inputs, enteredNumbers);
 
     std::cout << "Part 1: " << foundBoards[0]
               << "\nPart 2: " << *foundBoards.rbegin() << std::endl;
