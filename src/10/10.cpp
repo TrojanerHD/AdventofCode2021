@@ -8,7 +8,7 @@
 #include "../common/common.h"
 
 int main() {
-    auto lines = split(read_inputs(), "\n");
+    const auto lines = split(read_inputs(), "\n");
     std::stack<char> brackets;
     int points1 = 0;
     std::vector<long> points2{};
@@ -67,7 +67,7 @@ int main() {
             brackets.pop();
             if (score < 0) {
                 score = __LONG_MAX__;
-                while (!brackets.empty()) brackets.pop();
+                brackets = {};
                 break;
             }
         }
