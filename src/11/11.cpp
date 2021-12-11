@@ -44,7 +44,7 @@ int main() {
     std::vector<std::string> inputsVector = split(read_inputs(), "\n");
     std::vector<std::vector<Octopus>> rows;
     int flashes = 0;
-		int part1 = 0;
+    int part1 = 0;
     int part2 = 0;
 
     for (auto string : inputsVector) {
@@ -65,8 +65,8 @@ int main() {
                     rows[y][x].marked = false;
                     ++flashes;
                 }
-				if (i == 99) part1 = flashes;
-				if (part2 != 0 && i >= 99) break;
+        if (i == 99) part1 = flashes;
+        if (part2 != 0 && i >= 99) break;
         if (part2 != 0) continue;
         bool simultaneously = true;
         for (auto row : rows) {
