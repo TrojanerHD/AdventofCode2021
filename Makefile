@@ -57,6 +57,10 @@ all:
 	cd src/11; \
 		./a.out
 
+12:
+	cd src/12; \
+		./a.out
+
 clean:
 	for i in main; do find ./src -type f -name "a.out" -delete; done
 
