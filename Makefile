@@ -12,6 +12,8 @@ all:
 	make 08
 	make 09
 	make 10
+	make 11
+	make 12
 
 01: 
 	cd src/01; \
