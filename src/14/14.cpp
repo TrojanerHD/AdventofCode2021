@@ -9,26 +9,26 @@
 
 #include "../common/common.h"
 
-void increase(std::unordered_map<std::string, long long>& map,
-              std::string input, int increment = 1) {
-    std::unordered_map<std::string, long long>::iterator it = map.find(input);
+void increase(std::unordered_map<std::string, uint64_t>& map, std::string input,
+              uint64_t increment = 1) {
+    std::unordered_map<std::string, uint64_t>::iterator it = map.find(input);
     (*it).second += increment;
 }
 
-void insertOrIncrease(std::unordered_map<char, long long>& map, char input,
-                      long long increment = 1) {
-    std::unordered_map<char, long long>::iterator it = map.find(input);
+void insertOrIncrease(std::unordered_map<char, uint64_t>& map, char input,
+                      uint64_t increment = 1) {
+    std::unordered_map<char, uint64_t>::iterator it = map.find(input);
     if (it == map.end())
         map.insert({input, increment});
     else
         (*it).second += increment;
 }
 
-std::vector<long long> count_commons(
-    std::unordered_map<std::string, long long> input, std::string original) {
-    std::pair<char, long long> mostCommon{'A', 0};
-    std::pair<char, long long> leastCommon{'A', __LONG_LONG_MAX__};
-    std::unordered_map<char, long long> map;
+std::vector<uint64_t> count_commons(
+    std::unordered_map<std::string, uint64_t> input, std::string original) {
+    std::pair<char, uint64_t> mostCommon{'A', 0};
+    std::pair<char, uint64_t> leastCommon{'A', UINT64_MAX};
+    std::unordered_map<char, uint64_t> map;
     for (auto kv : input) {
         insertOrIncrease(map, kv.first[0], kv.second);
     }
@@ -51,8 +51,8 @@ int main() {
         rules.insert({ruleset[0], ruleset[1]});
     }
 
-    std::unordered_map<std::string, long long> result;
-    std::unordered_map<std::string, long long> resultPart1;
+    std::unordered_map<std::string, uint64_t> result;
+    std::unordered_map<std::string, uint64_t> resultPart1;
 
     for (auto rule : rules) result.insert({rule.first, 0});
 
@@ -62,9 +62,11 @@ int main() {
         increase(result, resolve);
     }
 
+    std::unordered_map<char, uint64_t> characters;
+
     for (int j = 0; j < 40; ++j) {
         auto tempResult = result;
-        for (std::unordered_map<std::string, long long>::iterator it =
+        for (std::unordered_map<std::string, uint64_t>::iterator it =
                  result.begin();
              it != result.end(); ++it) {
             if ((*it).second == 0) continue;
