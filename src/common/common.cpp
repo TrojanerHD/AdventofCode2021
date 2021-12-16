@@ -56,11 +56,11 @@ std::vector<int> string_vector_to_int_vector(std::vector<std::string> input) {
 
 // Stolen from
 // https://www.programiz.com/cpp-programming/examples/binary-decimal-convert
-int binary_to_decimal(std::string binary) {
-    int dec = 0, i = 0, rem;
+uint64_t binary_to_decimal(std::string binary) {
+    uint64_t dec = 0, i = 0, rem;
 
     while (binary.length() != 0) {
-        rem = stol(binary) % 10;
+        rem = binary[binary.length() - 1] - '0';
         binary.pop_back();
         dec += rem * pow(2, i);
         ++i;
