@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -135,7 +133,6 @@ size_t analyze_bits(std::vector<uint64_t>& numbers, int& versions,
                     break;
             }
             numbers.push_back(total);
-
             return newBeginning;
     }
 }
@@ -143,8 +140,6 @@ size_t analyze_bits(std::vector<uint64_t>& numbers, int& versions,
 int main() {
     std::string input = read_inputs();
     auto bin = hex_to_bin(input);
-    // while (bin[bin.length() - 1] == '0') bin = bin.substr(0, bin.length() -
-    // 1);
     std::vector<uint64_t> numbers;
     int versions = 0;
     analyze_bits(numbers, versions, bin);

@@ -1,7 +1,4 @@
-#include <algorithm>
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -12,8 +9,8 @@ class Line {
     std::vector<int> x{};
     std::vector<int> y{};
     Direction direction;
-    static Line allCoordinates(int x1, int x2, int y1, int y2,
-                               Direction direction) {
+    static Line all_coordinates(int x1, int x2, int y1, int y2,
+                                Direction direction) {
         auto line = new Line(direction);
         if (x1 < x2)
             for (int i = x1; i <= x2; ++i) line->x.push_back(i);
@@ -59,13 +56,13 @@ int main() {
 
         if (xStart == xEnd)
             lines.push_back(
-                Line::allCoordinates(xStart, xEnd, yStart, yEnd, Vertical));
+                Line::all_coordinates(xStart, xEnd, yStart, yEnd, Vertical));
         else if (yStart == yEnd)
             lines.push_back(
-                Line::allCoordinates(xStart, xEnd, yStart, yEnd, Horizontal));
+                Line::all_coordinates(xStart, xEnd, yStart, yEnd, Horizontal));
         else
             lines.push_back(
-                Line::allCoordinates(xStart, xEnd, yStart, yEnd, Diagonal));
+                Line::all_coordinates(xStart, xEnd, yStart, yEnd, Diagonal));
     }
     std::vector<Intersection> straightIntersections{};
     std::vector<Intersection> allIntersections{};

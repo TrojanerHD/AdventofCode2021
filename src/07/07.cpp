@@ -1,9 +1,8 @@
 #include <algorithm>
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
+
 int main() {
     std::vector<int> inputs =
         string_vector_to_int_vector(split(read_inputs(), ","));

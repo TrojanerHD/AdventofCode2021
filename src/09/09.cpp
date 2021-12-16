@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -59,8 +57,7 @@ int main() {
             std::vector<Point> lowPoint =
                 low_point(part1, {}, inputs[y][x], inputs, x, y);
             part2 = lowPoint.size();
-            if (part2 != 0)
-                basins.push_back(part2);
+            if (part2 != 0) basins.push_back(part2);
         }
     int highest = 0;
     int secondHighest = 0;

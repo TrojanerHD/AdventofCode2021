@@ -1,8 +1,6 @@
 #include <algorithm>
 #include <iostream>
 #include <sstream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -19,9 +17,9 @@ std::vector<int> string_to_int_vector(std::string input) {
 }
 
 void add_board(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
-              bingoBoard foundBoard,
-              std::vector<bingoBoard>::iterator& bingoBoardIterator,
-              std::vector<int> enteredNumbers) {
+               bingoBoard foundBoard,
+               std::vector<bingoBoard>::iterator& bingoBoardIterator,
+               std::vector<int> enteredNumbers) {
     int sum = 0;
     for (std::vector<int> row : foundBoard)
         for (int number : row)
@@ -34,8 +32,8 @@ void add_board(std::vector<int>& bingoBoards, std::vector<bingoBoard>& bingos,
 }
 
 std::vector<int> find_board(std::vector<bingoBoard> bingos,
-                           std::vector<std::string> inputs,
-                           std::vector<int>& enteredNumbers) {
+                            std::vector<std::string> inputs,
+                            std::vector<int>& enteredNumbers) {
     std::vector<int> bingoBoards = {};
     for (std::string input : inputs) {
         enteredNumbers.push_back(stoi(input));
@@ -54,7 +52,7 @@ std::vector<int> find_board(std::vector<bingoBoard> bingos,
                     }
                 if (bingo) {
                     add_board(bingoBoards, bingos, bingoBoard,
-                             bingoBoardIterator, enteredNumbers);
+                              bingoBoardIterator, enteredNumbers);
                     break;
                 }
             }
@@ -71,7 +69,7 @@ std::vector<int> find_board(std::vector<bingoBoard> bingos,
                 }
                 if (bingo) {
                     add_board(bingoBoards, bingos, bingoBoard,
-                             bingoBoardIterator, enteredNumbers);
+                              bingoBoardIterator, enteredNumbers);
                     break;
                 }
             }
