@@ -1,8 +1,4 @@
-#include <algorithm>
 #include <iostream>
-#include <map>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -34,6 +30,5 @@ int main() {
     long part2 = 0;
     for (long x : inputs) part2 += x;
 
-    std::cout << "Part 1: " << part1 << "\nPart 2: " << part2
-              << std::endl;
+    std::cout << "Part 1: " << part1 << "\nPart 2: " << part2 << std::endl;
 }

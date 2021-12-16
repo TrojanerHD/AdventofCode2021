@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -68,12 +66,12 @@ int main() {
             }
         }
 
-				// Deleting all duplicates
+        // Deleting all duplicates
         for (std::vector<Coordinate>::iterator j = coordinates.begin();
              j < coordinates.end() - 1; ++j) {
             for (std::vector<Coordinate>::iterator k = j + 1;
                  k < coordinates.end(); ++k) {
-                if ((*j).x == (*k).x && (*j).y == (*k).y) {
+                if (j->x == k->x && j->y == k->y) {
                     coordinates.erase(k);
                     --k;
                     --j;

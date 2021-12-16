@@ -1,27 +1,21 @@
-#include <math.h>
-
-#include <algorithm>
 #include <iostream>
-#include <set>
-#include <string>
 #include <unordered_map>
-#include <vector>
 
 #include "../common/common.h"
 
 void increase(std::unordered_map<std::string, uint64_t>& map, std::string input,
               uint64_t increment = 1) {
     std::unordered_map<std::string, uint64_t>::iterator it = map.find(input);
-    (*it).second += increment;
+    it->second += increment;
 }
 
-void insertOrIncrease(std::unordered_map<char, uint64_t>& map, char input,
-                      uint64_t increment = 1) {
+void insert_or_increase(std::unordered_map<char, uint64_t>& map, char input,
+                        uint64_t increment = 1) {
     std::unordered_map<char, uint64_t>::iterator it = map.find(input);
     if (it == map.end())
         map.insert({input, increment});
     else
-        (*it).second += increment;
+        it->second += increment;
 }
 
 std::vector<uint64_t> count_commons(
@@ -30,9 +24,9 @@ std::vector<uint64_t> count_commons(
     std::pair<char, uint64_t> leastCommon{'A', UINT64_MAX};
     std::unordered_map<char, uint64_t> map;
     for (auto kv : input) {
-        insertOrIncrease(map, kv.first[0], kv.second);
+        insert_or_increase(map, kv.first[0], kv.second);
     }
-    insertOrIncrease(map, original[original.length() - 1], 1);
+    insert_or_increase(map, original[original.length() - 1], 1);
 
     for (auto kv : map) {
         if (kv.second > mostCommon.second) mostCommon = kv;
@@ -69,22 +63,21 @@ int main() {
         for (std::unordered_map<std::string, uint64_t>::iterator it =
                  result.begin();
              it != result.end(); ++it) {
-            if ((*it).second == 0) continue;
+            if (it->second == 0) continue;
             for (auto rule : rules) {
-                auto resolve = std::string() + (*it).first[0] + (*it).first[1];
+                auto resolve = std::string() + it->first[0] + it->first[1];
                 if (rule.first == resolve) {
-                    auto first = (*it).first[0] + rule.second;
-                    auto second = rule.second + (*it).first[1];
-                    increase(tempResult, first, (*it).second);
-                    increase(tempResult, second, (*it).second);
-                    (*tempResult.find((*it).first)).second -= (*it).second;
+                    auto first = it->first[0] + rule.second;
+                    auto second = rule.second + it->first[1];
+                    increase(tempResult, first, it->second);
+                    increase(tempResult, second, it->second);
+                    tempResult.find(it->first)->second -= it->second;
                     break;
                 }
             }
         }
         result = tempResult;
-        if (j == 9)
-         resultPart1 = result;
+        if (j == 9) resultPart1 = result;
     }
 
     auto part1 = count_commons(resultPart1, polymerTemplate);

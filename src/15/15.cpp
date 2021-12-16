@@ -1,7 +1,5 @@
 #include <algorithm>
 #include <iostream>
-#include <string>
-#include <vector>
 
 #include "../common/common.h"
 
@@ -19,8 +17,9 @@ class Node {
     }
 };
 
-std::vector<Node>::iterator getNeighborNode(std::vector<Node>& path, Node node,
-                                            std::vector<int> offset) {
+std::vector<Node>::iterator get_neighbor_node(std::vector<Node>& path,
+                                              Node node,
+                                              std::vector<int> offset) {
     return std::find_if(path.begin(), path.end(),
                         [node, offset](Node tempNode) {
                             return tempNode.x == node.x + offset[0] &&
@@ -39,13 +38,13 @@ std::vector<Node> dijkstra(std::vector<Node> path) {
         finalNode->visited = true;
         std::vector<std::vector<Node>::iterator> editNodes;
         std::vector<Node>::iterator it =
-            getNeighborNode(path, *finalNode, {-1, 0});
+            get_neighbor_node(path, *finalNode, {-1, 0});
         if (it != path.end()) editNodes.push_back(it);
-        it = getNeighborNode(path, *finalNode, {1, 0});
+        it = get_neighbor_node(path, *finalNode, {1, 0});
         if (it != path.end()) editNodes.push_back(it);
-        it = getNeighborNode(path, *finalNode, {0, -1});
+        it = get_neighbor_node(path, *finalNode, {0, -1});
         if (it != path.end()) editNodes.push_back(it);
-        it = getNeighborNode(path, *finalNode, {0, 1});
+        it = get_neighbor_node(path, *finalNode, {0, 1});
         if (it != path.end()) editNodes.push_back(it);
         for (auto node : editNodes) {
             int distance = finalNode->distance + node->value;
