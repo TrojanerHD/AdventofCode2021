@@ -5,6 +5,7 @@
 #include <regex>
 #include <string>
 #include <vector>
+#include <cmath>
 
 // Stolen from https://stackoverflow.com/a/40699396/9634099
 std::string read_inputs() {
@@ -43,6 +44,7 @@ std::vector<std::string> split(std::string target, std::string delim) {
     }
     return v;
 }
+
 // Stolen from https://stackoverflow.com/a/15619863/9634099
 std::vector<int> string_vector_to_int_vector(std::vector<std::string> input) {
     std::vector<int> output;
@@ -50,4 +52,19 @@ std::vector<int> string_vector_to_int_vector(std::vector<std::string> input) {
                    std::back_inserter(output),
                    [](const std::string& str) { return stoi(str); });
     return output;
+}
+
+// Stolen from
+// https://www.programiz.com/cpp-programming/examples/binary-decimal-convert
+int binary_to_decimal(std::string binary) {
+    int dec = 0, i = 0, rem;
+
+    while (binary.length() != 0) {
+        rem = stol(binary) % 10;
+        binary.pop_back();
+        dec += rem * pow(2, i);
+        ++i;
+    }
+
+    return dec;
 }

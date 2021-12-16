@@ -5,21 +5,6 @@
 
 #include "../common/common.h"
 
-// Stolen from
-// https://www.programiz.com/cpp-programming/examples/binary-decimal-convert
-int binary_to_decimal(std::string binary) {
-    int dec = 0, i = 0, rem;
-
-    while (binary.length() != 0) {
-        rem = stol(binary) % 10;
-        binary.pop_back();
-        dec += rem * pow(2, i);
-        ++i;
-    }
-
-    return dec;
-}
-
 int number_of_zeros(std::vector<std::string>& inputs, size_t i) {
     int zeros = 0;
     for (std::vector<std::string>::iterator iterator = inputs.begin();
