@@ -18,6 +18,7 @@ all:
 	make 14
 	make 15
 	make 16
+	make 17
 
 01: 
 	cd src/01; \
@@ -81,6 +82,10 @@ all:
 
 16:
 	cd src/16; \
+		./a.out
+
+17:
+	cd src/17; \
 		./a.out
 
 clean:
