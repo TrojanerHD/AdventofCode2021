@@ -30,7 +30,7 @@ int main() {
         for (int x = minX; x <= highFinalX; ++x) {
             auto tempY = y;
             auto tempX = x;
-						int highYTemp = 0;
+            int highYTemp = 0;
             std::vector<int> oldPosition{0, 0};
             while (probePosition[0] <= highFinalX &&
                    probePosition[1] >= lowFinalY) {
@@ -46,8 +46,8 @@ int main() {
             }
             if (oldPosition[0] >= lowFinalX && oldPosition[1] <= highFinalY) {
                 ++part2;
-								highY = highYTemp;
-						}
+                highY = highYTemp;
+            }
             probePosition = {0, 0};
         }
     }
