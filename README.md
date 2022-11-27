@@ -50,14 +50,14 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td></td>
       <td><a href="https://github.com/LeMoonStar/AoC20">AoC20</a></td>
       <td><a href="https://github.com/LeMoonStar/AoC21">AoC21</a></td>
-      <td></td>
+      <td><a href="https://github.com/LeMoonStar/AoC21">AoC22</a></td>
     </tr>
     <tr>
       <td>andi-makes</td>
       <td></td>
       <td><a href="https://github.com/andi-makes/aoc2020">aoc2020</a></td>
       <td><a href="https://github.com/andi-makes/aoc2021">aoc2021</a></td>
-      <td></td>
+      <td><a href="https://git.schmarrn.dev/andi/aoc2022">aoc2022</a></td>
     </tr>
     <tr>
       <td>feldim2425</td>
@@ -105,7 +105,7 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td></td>
       <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2020">aoc/2020</a></td>
       <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2021">aoc/2021</a></td>
-      <td></td>
+      <td><a href="https://github.com/noeppi-noeppi/aoc/tree/master/2022">aoc/2022</a></td>
     </tr>
     <tr>
       <td>Seralius</td>
