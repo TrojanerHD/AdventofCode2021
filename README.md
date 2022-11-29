@@ -34,9 +34,9 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
     <tr>
       <td>networkException</td>
       <td></td>
-      <td><a href="https://github.com/networkException/AdventOfCode/tree/master/previous/2020">AdventOfCode/previous/<br/>2020</a></td>
-      <td><a href="https://github.com/networkException/AdventOfCode">AdventOfCode</a></td>
-      <td></td>
+      <td><a href="https://github.com/networkException/AdventOfCode/tree/2020">AdventOfCode/tree/2020</a></td>
+      <td><a href="https://github.com/networkException/AdventOfCode/tree/2021">AdventOfCode/tree/2021</a></td>
+      <td><a href="https://github.com/networkException/AdventOfCode/tree/2022">AdventOfCode/tree/2022</a></td>
     </tr>
     <tr>
       <td>derNiklaas</td>
