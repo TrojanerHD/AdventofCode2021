@@ -77,7 +77,7 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td></td>
       <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2020%20-%20CPP">AdventOfCode/2020 - CPP</a></td>
       <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2021%20-%20LUA">AdventOfCode/2021 - LUA</a></td>
-      <td></td>
+      <td><a href="https://github.com/1Turtle/AdventOfCode/tree/main/2022">AdventOfCode/2022</a></td>
     </tr>
     <tr>
       <td>J0B10</td>
