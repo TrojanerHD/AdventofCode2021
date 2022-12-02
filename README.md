@@ -68,8 +68,7 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
     <tr>
       <td>daanbreur</td>
       <td></td>
-      <td colspan=2 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
-      <td></td>
+      <td colspan=3 align="center"><a href="https://github.com/daanbreur/AdventofCode">AdventofCode</a></td>
     </tr>
     <tr>
       <td>1Turtle</td>
