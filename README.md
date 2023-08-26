@@ -22,7 +22,7 @@ My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021
       <td>TrojanerHD</td>
       <td></td>
       <td><a href="https://github.com/TrojanerHD/AdventofCode2020#check-out-solutions-from-others">AdventofCode2020</a></td>
-      <td>➡ <a href="https://github.com/TrojanerHD/AdventofCode2021">AdventofCode2021</a></td>
+      <td>➡️ <a href="https://github.com/TrojanerHD/AdventofCode2021">AdventofCode2021</a></td>
       <td>️<a href="https://github.com/TrojanerHD/AdventofCode2022#check-out-solutions-from-others">AdventofCode2022</a></td>
     </tr>
     <tr>
