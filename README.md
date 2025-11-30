@@ -2,8 +2,8 @@
 
 My personal solutions of the [Advent of Code 2021](https://adventofcode.com/2021) challenge
 
-[![Language](https://img.shields.io/badge/Language-C++-blue)](https://github.com/TrojanerHD/AdventofCode2021)
-[![Days completed](https://img.shields.io/badge/Days%20completed-18-red)](https://github.com/TrojanerHD/AdventofCode2021)
+[![Language](https://img.shields.io/badge/Language-C++-blue)](https://github.com/TrojanerHD/AdventofCode2021) (and Rust for day 19)
+[![Days completed](https://img.shields.io/badge/Days%20completed-19-red)](https://github.com/TrojanerHD/AdventofCode2021)
 
 ## Check out solutions from others
 **This table will scroll through the years as you click through my repositories**; *if you click on year X, the repositories of X-1, X, and X + 1 (if available) will be shown*.
